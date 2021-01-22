@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Foundation\Console;
+namespace Devgowa\LumenServe\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Env;
@@ -40,7 +40,7 @@ class ServeCommand extends Command
      */
     public function handle()
     {
-        chdir(public_path());
+        chdir(env('PUBLIC_PATH', base_path('public')));
 
         $this->line("<info>Starting Laravel development server:</info> http://{$this->host()}:{$this->port()}");
 
